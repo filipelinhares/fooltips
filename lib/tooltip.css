@@ -1,0 +1,218 @@
+/*
+
+ .ToolTIPS
+
+*/
+
+.Tooltip {
+  position: relative;
+}
+
+/* # ==========.Tooltip bubble */
+.Tooltip::after {
+  position: absolute;
+  z-index: var(--tooltip-zIndex);
+  display: none;
+  padding: var(--tooltip-padding);
+  font-size: var(--tooltip-font-size);
+  color: var(--tooltip-color);
+  text-align: center;
+  word-wrap: break-word;
+  white-space: pre;
+  pointer-events: none;
+  content: attr(aria-label);
+  background: var(--tooltip-background);
+  border-radius: var(--tooltip-border-radius);
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* # ==========.Tooltip arrow */
+.Tooltip::before {
+  position: absolute;
+  z-index: var(--tooltip-zIndex);
+  display: none;
+  width: 0;
+  height: 0;
+  color: var(--tooltip-background);
+  pointer-events: none;
+  content: "";
+  border: 5px solid transparent;
+}
+
+/* # ========== When.Tooltip is active */
+.Tooltip:hover,
+.Tooltip:active,
+.Tooltip:focus {
+  &::before,
+  &::after {
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+.Tooltip--multiline:hover,
+.Tooltip--multiline:active,
+.Tooltip--multiline:focus {
+  &::after {
+    display: table-cell;
+  }
+}
+
+.is-tooltiped {
+  &::before,
+  &::after {
+    display: inline-block;
+  }
+
+  &.Tooltip--multiline {
+    &::after {
+      display: table-cell;
+    }
+  }
+}
+
+/* # ==========.Tooltip bottom */
+.TooltipB,
+.TooltipBR,
+.TooltipBL {
+  &::after {
+    top: 100%;
+    right: 50%;
+    margin-top: 5px;
+  }
+
+  &::before {
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    margin-right: -5px;
+    border-bottom-color: var(--tooltip-background);
+  }
+}
+
+.TooltipBR {
+  &::after {
+    right: auto;
+    left: 50%;
+    margin-left: -15px;
+  }
+}
+
+.TooltipBL::after {
+  margin-right: -15px;
+}
+
+/* # ==========.Tooltip top */
+.TooltipT,
+.TooltipTR,
+.TooltipTL {
+  &::after {
+    right: 50%;
+    bottom: 100%;
+    margin-bottom: 5px;
+  }
+
+  &::before {
+    top: -5px;
+    right: 50%;
+    bottom: auto;
+    margin-right: -5px;
+    border-top-color: var(--tooltip-background);
+  }
+}
+
+.TooltipTR {
+  &::after {
+    right: auto;
+    left: 50%;
+    margin-left: -15px;
+  }
+}
+
+.TooltipTL::after {
+  margin-right: -15px;
+}
+
+/* Move the.Tooltip body to the center of the object. */
+.TooltipB::after,
+.TooltipT::after {
+  transform: translateX(50%);
+}
+
+/* # ==========.Tooltip left */
+.TooltipL {
+  &::after {
+    right: 100%;
+    bottom: 50%;
+    margin-right: 5px;
+    transform: translateY(50%);
+  }
+
+  &::before {
+    top: 50%;
+    bottom: 50%;
+    left: -5px;
+    margin-top: -5px;
+    border-left-color: var(--tooltip-background);
+  }
+}
+
+/* # ==========.Tooltip right */
+.TooltipR {
+  &::after {
+    bottom: 50%;
+    left: 100%;
+    margin-left: 5px;
+    transform: translateY(50%);
+  }
+
+  &::before {
+    top: 50%;
+    right: -5px;
+    bottom: 50%;
+    margin-top: -5px;
+    border-right-color: var(--tooltip-background);
+  }
+}
+
+/* # ========== Multiline Tooltip */
+.Tooltip--multiline {
+  &::after {
+    width: max-content;
+    max-width: var(--multiline-max-width);
+    word-break: break-word;
+    word-wrap: normal;
+    white-space: pre-line;
+    border-collapse: separate;
+  }
+
+  &.TooltipB::after,
+  &.TooltipT::after {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.TooltipL::after,
+  &.TooltipR::after {
+    right: 100%;
+  }
+}
+
+@media screen and (min-width: 0\0) {
+  /* IE9 and IE10 rules */
+
+  .Tooltip--multiline::after {
+    width: var(--multiline-max-width);
+  }
+}
+
+:root {
+  --multiline-max-width: 250px;
+  --tooltip-background: rgba(0, 0, 0, 0.8);
+  --tooltip-color: #fff;
+  --tooltip-padding: 5px 8px;
+  --tooltip-border-radius: 4px;
+  --tooltip-font-size: 0.7rem;
+  --tooltip-zIndex: 9000;
+}
