@@ -1,19 +1,16 @@
-# funk flex grid [![funkcss-components npm](https://img.shields.io/npm/v/funkcss-components.svg)](https://www.npmjs.com/package/funkcss-components) [![Build Status](https://travis-ci.org/filipelinhares/funkcss-components.svg?branch=master)](https://travis-ci.org/filipelinhares/funkcss-components)
+# funkcss tooltip [![funkcss-tooltip npm](https://img.shields.io/npm/v/funkcss-tooltip.svg)](https://www.npmjs.com/package/funkcss-tooltip) [![Build Status](https://travis-ci.org/filipelinhares/funkcss-tooltip.svg?branch=master)](https://travis-ci.org/filipelinhares/funkcss-tooltip)
 
-Esse módulo contem flex-basis sizes and a container helpers which you can use with [funkcss](#todo).
-
-### [**Documentation**](#todo)
+### [Documentation](#todo)
 
 ## Development
 ```
-npm install
-gulp watch
+$ git clone https://github.com/filipelinhares/funkcss-tooltip.git
+$ cd funkcss-tooltip
+$ npm run setup
 ```
-**Other gulp comands**
 
-- `gulp postcss` - compile lib to dist
-- `gulp min` - minify dist
-- `gulp` - both together
+_More commands can be found in the [contributing guide](https://github.com/filipelinhares/funkcss/blob/master/CONTRIBUTING.md)_.
+
 
 ### Test
 ```
@@ -22,8 +19,8 @@ npm test
 
 **cssguard test**
 ```
-python -m SimpleHTTPServer
-http://localhost:8000/test
+python -m SimpleHTTPServer -p 8080
+http://localhost:8080/test
 ```
 
 ## License
