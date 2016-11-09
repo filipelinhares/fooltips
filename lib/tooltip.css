@@ -1,8 +1,9 @@
-/*
+/*!
+ * funkcss tooltip • v0.2.0
+ * MIT License
+ * github.com/filipelinhares/funkcss-tooltip
+ */
 
- TOOLTIPS
-
-*/
 
 .tooltip {
   position: relative;
