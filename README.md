@@ -1,6 +1,28 @@
 # funkcss tooltip [![funkcss-tooltip npm](https://img.shields.io/npm/v/funkcss-tooltip.svg)](https://www.npmjs.com/package/funkcss-tooltip) [![Build Status](https://travis-ci.org/filipelinhares/funkcss-tooltip.svg?branch=master)](https://travis-ci.org/filipelinhares/funkcss-tooltip)
 
-### [Documentation](#todo)
+## Usage
+```html
+<span class="tooltip tooltipT" aria-label="Meu tooltip">Tooltip</span>
+```
+
+## Classes
+**Base**
+- `.tooltip`
+
+**Direction**
+- `.tooltipT`
+- `.tooltipR`
+- `.tooltipB`
+- `.tooltipL`
+- `.tooltipTR`
+- `.tooltipTL`
+- `.tooltipBR`
+- `.tooltipBL`
+- `.tooltip-multiline`
+
+**States**
+- `is-tooltiped`
+
 
 ## Development
 ```
