@@ -1,4 +1,4 @@
-# fooltips [![funkcss-tooltip npm](https://img.shields.io/npm/v/fooltips.svg)](https://www.npmjs.com/package/fooltips) [![Build Status](https://travis-ci.org/filipelinhares/fooltips.svg?branch=master)](https://travis-ci.org/filipelinhares/fooltips)
+# fooltips [![funkcss-tooltip npm](https://img.shields.io/npm/v/fooltips.svg)](https://www.npmjs.com/package/fooltips) [![Build Status](https://travis-ci.org/filipelinhares/fooltips.svg?branch=master)](https://travis-ci.org/filipelinhares/fooltips) [![fooltips file size](https://img.shields.io/github/size/filipelinhares/fooltips/dist/fooltips.min.css)](https://github.com/filipelinhares/fooltips/blob/master/dist/fooltips.min.css)
 
 ## Usage
 ```html
