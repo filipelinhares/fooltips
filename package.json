@@ -1,37 +1,26 @@
 {
-  "name": "funkcss-tooltip",
-  "version": "0.2.0",
-  "description": "funkcss tooltip component",
-  "main": "dist/funkcss-tooltip.min.css",
+  "name": "fooltips",
+  "version": "0.3.0",
+  "description": "Tooltips with just CSS",
+  "main": "dist/fooltips.min.css",
   "author": "Filipe Linhares <lip.linhares@gmail.com> (http://filipelinhares.com)",
-  "homepage": "https://github.com/filipelinhares/funkcss-tooltip#readme",
-  "repository": "filipelinhares/funkcss-tooltip",
-  "bugs": "https://github.com/filipelinhares/funkcss-tooltip/issues",
+  "homepage": "https://github.com/filipelinhares/fooltips#readme",
+  "repository": "filipelinhares/fooltips",
+  "bugs": "https://github.com/filipelinhares/fooltips/issues",
   "license": "MIT",
   "keywords": [
     "css",
-    "functional",
-    "components",
-    "funkcss-component"
+    "tooltips"
   ],
   "scripts": {
     "test": "stylelint lib/*.css",
-    "compile": "postcss -u postcss-import -u postcss-url -u postcss-for -u postcss-cssnext -u postcss-import -u postcss-nested -u postcss-reporter -o ./dist/funkcss-tooltip.css ./lib/tooltip.css",
-    "minify": "postcss -u cssnano -o ./dist/funkcss-tooltip.min.css ./dist/funkcss-tooltip.css",
-    "build": "npm run compile && npm run minify"
+    "compile": "postcss ./lib/fooltips.css -u postcss-nested postcss-preset-env cssnano -o ./dist/fooltips.min.css --no-map"
   },
   "devDependencies": {
-    "cssnano": "^3.5.2",
-    "cssguard": "^1.0.1",
-    "postcss-cli": "^2.6.0",
-    "postcss-cssnext": "^2.5.2",
-    "postcss-for": "^2.0.1",
-    "postcss-import": "^8.1.0",
-    "postcss-importantly": "0.0.7",
-    "postcss-nested": "^1.0.0",
-    "postcss-reporter": "^2.0.0",
-    "postcss-url": "^5.1.1",
-    "stylelint": "^7.3.1"
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^6.1.3",
+    "postcss-nested": "^4.1.2",
+    "postcss-preset-env": "^6.7.0",
+    "stylelint": "^11.0.0"
   }
 }
-

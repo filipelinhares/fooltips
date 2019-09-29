@@ -1,49 +1,33 @@
-# funkcss tooltip [![funkcss-tooltip npm](https://img.shields.io/npm/v/funkcss-tooltip.svg)](https://www.npmjs.com/package/funkcss-tooltip) [![Build Status](https://travis-ci.org/filipelinhares/funkcss-tooltip.svg?branch=master)](https://travis-ci.org/filipelinhares/funkcss-tooltip)
+# fooltips [![funkcss-tooltip npm](https://img.shields.io/npm/v/fooltips.svg)](https://www.npmjs.com/package/fooltips) [![Build Status](https://travis-ci.org/filipelinhares/fooltips.svg?branch=master)](https://travis-ci.org/filipelinhares/fooltips)
 
 ## Usage
 ```html
-<span class="tooltip tooltipT" aria-label="Meu tooltip">Tooltip</span>
+<span data-tooltip="top" aria-label="Lorem ipsum">Simple text</span>
 ```
 
-## Classes
+## Attributes
 **Base**
-- `.tooltip`
+- `data-tooltip`
 
 **Direction**
-- `.tooltipT`
-- `.tooltipR`
-- `.tooltipB`
-- `.tooltipL`
-- `.tooltipTR`
-- `.tooltipTL`
-- `.tooltipBR`
-- `.tooltipBL`
-- `.tooltip-multiline`
+- `data-tooltip="top"`
+- `data-tooltip="top-right"`
+- `data-tooltip="top-left"`
+- `data-tooltip="left"`
+- `data-tooltip="right"`
+- `data-tooltip="bottom-right"`
+- `data-tooltip="bottom-left"`
+- `data-tooltip="bottom"`
+
+**Multiline**
+- `data-tooltip-multiline`
 
 **States**
+- `data-is-tooltiped`
+
+### Classes
+**States**
 - `is-tooltiped`
-
-
-## Development
-```
-$ git clone https://github.com/filipelinhares/funkcss-tooltip.git
-$ cd funkcss-tooltip
-$ npm run setup
-```
-
-_More commands can be found in the [contributing guide](https://github.com/filipelinhares/funkcss/blob/master/CONTRIBUTING.md)_.
-
-
-### Test
-```
-npm test
-```
-
-**cssguard test**
-```
-python -m SimpleHTTPServer -p 8080
-http://localhost:8080/test
-```
 
 ## License
 [MIT](LICENSE.md) © Filipe Linhares
