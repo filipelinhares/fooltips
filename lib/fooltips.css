@@ -20,7 +20,7 @@
   word-wrap: break-word;
   white-space: pre;
   pointer-events: none;
-  content: attr(aria-label);
+  content: attr(var(--tooltip-content));
   background-color: var(--tooltip-background-color);
   border-radius: var(--tooltip-border-radius);
   -webkit-font-smoothing: subpixel-antialiased;
@@ -224,4 +224,5 @@
   --tooltip-border-radius: 4px;
   --tooltip-font-size: 0.7rem;
   --tooltip-zIndex: 9000;
+  --tooltip-content: aria-label;
 }
