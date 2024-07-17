@@ -1,11 +1,13 @@
-# fooltips [![funkcss-tooltip npm](https://img.shields.io/npm/v/fooltips.svg)](https://www.npmjs.com/package/fooltips)  [![fooltips file size](https://img.shields.io/github/size/filipelinhares/fooltips/dist/fooltips.min.css)](https://github.com/filipelinhares/fooltips/blob/master/dist/fooltips.min.css)
+# fooltips [![npm version](https://img.shields.io/npm/v/fooltips.svg)](https://www.npmjs.com/package/fooltips) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/fooltips)
 
 ## Usage
+
 ```html
 <span data-tooltip="top" aria-label="Lorem ipsum">Simple text</span>
 ```
 
 ## Attributes
+
 **Base**
 - `data-tooltip`
 
@@ -44,4 +46,5 @@
 ```
 
 ## License
+
 [MIT](LICENSE.md) © Filipe Linhares
