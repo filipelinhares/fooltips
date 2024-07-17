@@ -1,8 +1,15 @@
-/*!
- * funkcss tooltip • v0.4.0
- * MIT License
- * github.com/filipelinhares/fooltips
- */
+/*! github.com/filipelinhares/fooltips */
+
+:root {
+  --tooltip-multiline-width: 250px;
+  --tooltip-background-color: rgba(0, 0, 0, 0.8);
+  --tooltip-color: #fff;
+  --tooltip-padding: 5px 8px;
+  --tooltip-border-radius: 4px;
+  --tooltip-font-size: 0.7rem;
+  --tooltip-z-index: 9000;
+  --tooltip-content: aria-label;
+}
 
 [data-tooltip] {
   position: relative;
@@ -10,7 +17,7 @@
 
 [data-tooltip]::after {
   position: absolute;
-  z-index: var(--tooltip-zIndex);
+  z-index: var(--tooltip-z-index);
   opacity: 0;
   visibility: hidden;
   padding: var(--tooltip-padding);
@@ -29,7 +36,7 @@
 /* ARROW BASE */
 [data-tooltip]::before {
   position: absolute;
-  z-index: var(--tooltip-zIndex);
+  z-index: var(--tooltip-z-index);
   opacity: 0;
   visibility: hidden;
   width: 0;
@@ -49,6 +56,7 @@
 [data-tooltip]:hover,
 [data-tooltip]:active,
 [data-tooltip]:focus {
+
   &::before,
   &::after {
     opacity: 1;
@@ -67,6 +75,7 @@
 
 [data-is-tooltiped],
 .is-tooltiped {
+
   &::before,
   &::after {
     display: inline-block;
@@ -188,7 +197,7 @@
 [data-tooltip-multiline] {
   &::after {
     width: max-content;
-    max-width: var(--multiline-max-width);
+    max-width: var(--tooltip-multiline-width);
     word-break: break-word;
     word-wrap: normal;
     white-space: pre-line;
@@ -206,23 +215,4 @@
   &[data-tooltip="right"]::after {
     right: 100%;
   }
-}
-
-@media screen and (min-width: 0\0) {
-  /* IE9 and IE10 rules */
-
-  [data-tooltip-multiline]::after {
-    width: var(--multiline-max-width);
-  }
-}
-
-:root {
-  --multiline-max-width: 250px;
-  --tooltip-background-color: rgba(0, 0, 0, 0.8);
-  --tooltip-color: #fff;
-  --tooltip-padding: 5px 8px;
-  --tooltip-border-radius: 4px;
-  --tooltip-font-size: 0.7rem;
-  --tooltip-zIndex: 9000;
-  --tooltip-content: aria-label;
 }
