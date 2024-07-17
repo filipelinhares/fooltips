@@ -1,4 +1,4 @@
-# fooltips [![funkcss-tooltip npm](https://img.shields.io/npm/v/fooltips.svg)](https://www.npmjs.com/package/fooltips) [![Build Status](https://travis-ci.org/filipelinhares/fooltips.svg?branch=master)](https://travis-ci.org/filipelinhares/fooltips) [![fooltips file size](https://img.shields.io/github/size/filipelinhares/fooltips/dist/fooltips.min.css)](https://github.com/filipelinhares/fooltips/blob/master/dist/fooltips.min.css)
+# fooltips [![funkcss-tooltip npm](https://img.shields.io/npm/v/fooltips.svg)](https://www.npmjs.com/package/fooltips)  [![fooltips file size](https://img.shields.io/github/size/filipelinhares/fooltips/dist/fooltips.min.css)](https://github.com/filipelinhares/fooltips/blob/master/dist/fooltips.min.css)
 
 ## Usage
 ```html
@@ -28,6 +28,20 @@
 ### Classes
 **States**
 - `is-tooltiped`
+
+### Variables
+```css
+:root {
+  --tooltip-multiline-width: 250px;
+  --tooltip-background-color: rgba(0, 0, 0, .8);
+  --tooltip-color: #fff;
+  --tooltip-padding: 5px 8px;
+  --tooltip-border-radius: 4px;
+  --tooltip-font-size: 0.7rem;
+  --tooltip-z-index: 10;
+  --tooltip-content: aria-label;
+}
+```
 
 ## License
 [MIT](LICENSE.md) © Filipe Linhares
