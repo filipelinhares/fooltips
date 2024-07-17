@@ -1,6 +1,6 @@
 {
   "name": "fooltips",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tooltips with just CSS",
   "main": "dist/fooltips.min.css",
   "author": "Filipe Linhares <lip.linhares@gmail.com> (http://filipelinhares.com)",
