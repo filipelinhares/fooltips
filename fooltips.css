@@ -2,7 +2,7 @@
 
 :root {
   --tooltip-multiline-width: 250px;
-  --tooltip-background-color: rgba(0, 0, 0, 0.8);
+  --tooltip-background-color: rgb(0 0 0 / 80%);
   --tooltip-color: #fff;
   --tooltip-padding: 5px 8px;
   --tooltip-border-radius: 4px;
@@ -33,7 +33,6 @@
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-/* ARROW BASE */
 [data-tooltip]::before {
   position: absolute;
   z-index: var(--tooltip-z-index);
@@ -52,11 +51,32 @@
   transition: all 300ms;
 }
 
-/* STATES */
+[data-tooltip-multiline] {
+  &::after {
+    width: max-content;
+    max-width: var(--tooltip-multiline-width);
+    word-break: break-word;
+    word-wrap: normal;
+    white-space: pre-line;
+    border-collapse: separate;
+  }
+
+  &[data-tooltip="bottom"]::after,
+  &[data-tooltip="top"]::after {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &[data-tooltip="left"]::after,
+  &[data-tooltip="right"]::after {
+    right: 100%;
+  }
+}
+
 [data-tooltip]:hover,
 [data-tooltip]:active,
 [data-tooltip]:focus {
-
   &::before,
   &::after {
     opacity: 1;
@@ -75,7 +95,6 @@
 
 [data-is-tooltiped],
 .is-tooltiped {
-
   &::before,
   &::after {
     display: inline-block;
@@ -90,7 +109,6 @@
   }
 }
 
-/* BOTTOM DIRECTION */
 [data-tooltip="bottom"],
 [data-tooltip="bottom-right"],
 [data-tooltip="bottom-left"] {
@@ -121,7 +139,6 @@
   margin-right: -15px;
 }
 
-/* TOP DIRECTION */
 [data-tooltip="top"],
 [data-tooltip="top-right"],
 [data-tooltip="top-left"] {
@@ -157,7 +174,6 @@
   transform: translateX(50%);
 }
 
-/* LEFT DIRECTION */
 [data-tooltip="left"] {
   &::after {
     right: 100%;
@@ -175,7 +191,6 @@
   }
 }
 
-/* RIGHT DIRECTION */
 [data-tooltip="right"] {
   &::after {
     bottom: 50%;
@@ -190,29 +205,5 @@
     bottom: 50%;
     margin-top: -5px;
     border-right-color: var(--tooltip-background-color);
-  }
-}
-
-/* MULTILINE */
-[data-tooltip-multiline] {
-  &::after {
-    width: max-content;
-    max-width: var(--tooltip-multiline-width);
-    word-break: break-word;
-    word-wrap: normal;
-    white-space: pre-line;
-    border-collapse: separate;
-  }
-
-  &[data-tooltip="bottom"]::after,
-  &[data-tooltip="top"]::after {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  &[data-tooltip="left"]::after,
-  &[data-tooltip="right"]::after {
-    right: 100%;
   }
 }

@@ -13,14 +13,15 @@
     "tooltips"
   ],
   "scripts": {
-    "test": "stylelint lib/*.css",
-    "compile": "postcss ./lib/fooltips.css -u postcss-nested postcss-preset-env cssnano -o ./dist/fooltips.min.css --no-map"
+    "test": "stylelint fooltips.css",
+    "build": "postcss ./fooltips.css -u postcss-nested postcss-preset-env cssnano -o ./dist/fooltips.min.css --no-map"
   },
   "devDependencies": {
-    "cssnano": "^4.1.10",
-    "postcss-cli": "^6.1.3",
-    "postcss-nested": "^4.1.2",
-    "postcss-preset-env": "^6.7.0",
-    "stylelint": "^11.1.1"
+    "cssnano": "^7.0.4",
+    "postcss-cli": "^11.0.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^9.6.0",
+    "stylelint": "^16.7.0",
+    "stylelint-config-standard": "^36.0.1"
   }
 }
