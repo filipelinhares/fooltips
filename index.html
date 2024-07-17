@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>fooltips</title>
+  <meta name="viewport" content="width=device-width" />
+
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/funkcss/dist/funkcss.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/typcss/dist/typ.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/fooltips/dist/fooltips.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      font-size: 18px;
+    }
+
+    span {
+      font-family: "Roboto Mono", monospace;
+      margin-bottom: 0.5em;
+      line-height: 1.8;
+    }
+
+    header {
+      text-transform: lowercase;
+      font-size: 20px;
+    }
+
+    strong {
+      font-weight: 700;
+      border-bottom: 1px dotted;
+    }
+
+    h2 {
+      margin-top: 60px;
+    }
+
+    a {
+      color: #73a9fa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .tooltip--red {
+      --tooltip-background-color: red;
+    }
+
+    .tooltip--big {
+      --tooltip-background-color: #222;
+      --tooltip-padding: 8px 12px;
+      --tooltip-font-size: 1rem;
+    }
+
+    .tooltip--href {
+      --tooltip-content: href;
+    }
+
+    .cur-h {
+      cursor: help;
+    }
+
+    .mxw-1200 {
+      max-width: 1200px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="ta-c pY-1 bd">
+    <div class="mxw-1200 mX-a d-f ai-c jc-c">
+      <div class="mR-a d-f ai-c">
+        <span class="m-0">Fooltips</span>
+        <img src="./fooltips.svg" class="mR-1 as-fs" />
+      </div>
+      <nav class="">
+        <a class="d-f ai-c tooltip--href" data-tooltip="bottom" href="https://npmjs.org/fooltips">
+          npm
+        </a>
+        ·
+        <a class="tooltip--href" data-tooltip="bottom" href="https://github.com/filipelinhares/fooltips">Github</a>
+        · <a class="tooltip--href" data-tooltip="bottom" href="#api">API</a> ·
+        <a class="tooltip--href" data-tooltip="bottom" href="#examples">Examples</a>
+      </nav>
+    </div>
+  </header>
+  <main class="w-70 mX-a pT-3">
+    <h1>fooltips</h1>
+    <p>Tooltips with just CSS</p>
+
+    <h2>Installation</h2>
+    <p>npm</p>
+    <span class="d-b mB-2">npm install --save fooltips</span>
+    <p>unpkg</p>
+    <span class="d-b mB-2">https://unpkg.com/fooltips</span>
+    <h2>Customization</h2>
+    <h4>Defaults:</h4>
+    <pre>
+--multiline-max-width: 250px;
+--tooltip-background-color: rgba(0, 0, 0, 0.8);
+--tooltip-color: #fff;
+--tooltip-padding: 5px 8px;
+--tooltip-border-radius: 4px;
+--tooltip-font-size: 0.7rem;
+--tooltip-zIndex: 9000;
+--tooltip-content: aria-label;
+    </pre>
+
+    <p class="mB-3">
+    <pre class="m-0">
+.tooltip--red {
+  --tooltip-background-color: red;
+}
+    </pre>
+    <span class="d-ib tooltip--red cur-h" data-tooltip="right" aria-label="A red tooltip">
+      <strong>I have a custom tooltip</strong>
+    </span>
+    </p>
+
+    <p class="mB-4">
+    <pre class="m-0">
+.tooltip--big {
+  --tooltip-background-color: #222;
+  --tooltip-padding: 8px 12px;
+  --tooltip-font-size: 1rem;
+}
+    </pre>
+    <span class="d-ib tooltip--big cur-h" data-tooltip="right" aria-label="A big tooltip">
+      <strong>I have a big tooltip</strong>
+    </span>
+    </p>
+
+    <p class="mB-4">
+    <pre class="m-0">
+.tooltip--href {
+  --tooltip-content: href;
+}
+    </pre>
+    <a href="https://github.com/filipelinhares/fooltips" class="d-ib tooltip--href cur-p" data-tooltip="right">
+      <strong>I have a tooltip with a link</strong>
+    </a>
+    </p>
+
+    <h2 id="api">API</h2>
+    <h4>Base</h4>
+    <span class="d-b">data-tooltip</span>
+    <h4>Direction</h4>
+    <span class="d-b">data-tooltip="top"</span>
+    <span class="d-b">data-tooltip="top-right"</span>
+    <span class="d-b">data-tooltip="top-left"</span>
+    <span class="d-b">data-tooltip="left"</span>
+    <span class="d-b">data-tooltip="right"</span>
+    <span class="d-b">data-tooltip="bottom-right"</span>
+    <span class="d-b">data-tooltip="bottom-left"</span>
+    <span class="d-b">data-tooltip="bottom"</span>
+    <h4>Multiline</h4>
+    <spab class="d-b">data-tooltip-multiline</spab>
+    <h4>States</h4>
+    <span class="d-b">data-is-tooltiped</span>
+
+    <h2 id="examples">Examples</h2>
+
+    <h4>Top</h4>
+    <span class="m-0 d-b">
+      &lt;span
+      <span class="d-ib cur-h" tabindex="1" data-tooltip="top" aria-label="Simple text">
+        <strong>data-tooltip="top"</strong>
+      </span>
+      aria-label="Simple text"&gt;&lt;/span&gt;
+    </span>
+    <span class="m-0 d-b">
+      &lt;span
+      <span class="d-ib cur-h" tabindex="1" data-tooltip="top-right" aria-label="Simple text">
+        <strong>data-tooltip="top-right"</strong>
+      </span>
+      aria-label="Simple text"&gt;&lt;/span&gt;
+    </span>
+    <span class="m-0 d-b">
+      &lt;span
+      <span class="d-ib cur-h" tabindex="1" data-tooltip="top-left" aria-label="Simple text">
+        <strong>data-tooltip="top-left"</strong>
+      </span>
+      aria-label="Simple text"&gt;&lt;/span&gt;
+    </span>
+    <h4>Bottom</h4>
+    <span class="m-0 d-b">
+      &lt;span
+      <span class="d-ib cur-h" tabindex="1" data-tooltip="bottom" aria-label="Simple text">
+        <strong>data-tooltip="bottom"</strong>
+      </span>
+      aria-label="Simple text"&gt;&lt;/span&gt;
+    </span>
+    <span class="m-0 d-b">
+      &lt;span
+      <span class="d-ib cur-h" tabindex="1" data-tooltip="bottom-right" aria-label="Simple text">
+        <strong>data-tooltip="bottom-right"</strong>
+      </span>
+      aria-label="Simple text"&gt;&lt;/span&gt;
+    </span>
+    <span class="m-0 d-b">
+      &lt;span
+      <span class="d-ib cur-h" tabindex="1" data-tooltip="bottom-left" aria-label="Simple text">
+        <strong>data-tooltip="bottom-left"</strong>
+      </span>
+      aria-label="Simple text"&gt;&lt;/span&gt;
+    </span>
+    <h4>Left</h4>
+    <span class="m-0 d-b">
+      &lt;span
+      <span class="d-ib cur-h" tabindex="1" data-tooltip="left" aria-label="Simple text">
+        <strong>data-tooltip="left"</strong>
+      </span>
+      aria-label="Simple text"&gt;&lt;/span&gt;
+    </span>
+    <h4>Right</h4>
+    <span class="m-0 d-b">
+      &lt;span
+      <span class="d-ib cur-h" tabindex="1" data-tooltip="right" aria-label="Simple text">
+        <strong>data-tooltip="right"</strong>
+      </span>
+      aria-label="Simple text"&gt;&lt;/span&gt;
+    </span>
+    <h4>Multiline</h4>
+    <span class="m-0 d-b">
+      &lt;span
+      <span class="d-ib cur-h" tabindex="1" data-tooltip-multiline data-tooltip="right"
+        aria-label="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, odit!">
+        <strong>data-tooltip="right"</strong>
+      </span>
+      aria-label="Simple text"&gt;&lt;/span&gt;
+    </span>
+  </main>
+  <footer class="pY-3 mT-3 ta-c">
+    <a class="tooltip--href" data-tooltip="top" href="https://filipelinhares.com">flp</a>
+    ©
+  </footer>
+</body>
+
+</html>
